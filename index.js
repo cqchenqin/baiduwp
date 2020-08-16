@@ -1,3 +1,7 @@
+const BDUSS = '' //**INPUT YOUR BDUSS HERE**
+const STOKEN = '' //**INPUT YOUR STOKEN HERE**
+const SVIPBDUSS = ''//**INPUT YOUR SVIP BDUSS HERE**
+
 const error = `
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -237,8 +241,8 @@ const generate = async request => {
       method:'GET',
       headers:{
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.514.1919.810 Safari/537.36',
-        'Cookie':'BDUSS=**INPUT YOUR BDUSS HERE**; '
-            +  'STOKEN=**INPUT YOUR STOKEN HERE**; BDCLND=' + randsk
+        'Cookie':'BDUSS=' + BDUSS + '; '
+            +  'STOKEN=' + STOKEN + '; BDCLND=' + randsk
       }
     })
     const body = await res1.text()
@@ -258,8 +262,8 @@ const generate = async request => {
       method:'GET',
       headers:{
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.514.1919.810 Safari/537.36',
-        'Cookie':'BDUSS=**INPUT YOUR BDUSS HERE**;'
-            +  'STOKEN=**INPUT YOUR STOKEN HERE**; BDCLND=' + randsk
+        'Cookie':'BDUSS=' + BDUSS + ';'
+            +  'STOKEN=' + STOKEN + '; BDCLND=' + randsk
       }
     })
     const body = await res2.text()
@@ -622,8 +626,8 @@ const download = async request => {
       body:formData2,
       headers:{
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.514.1919.810 Safari/537.36',
-        'Cookie':'BDUSS=**INPUT YOUR BDUSS HERE**;'
-            +  'STOKEN=**INPUT YOUR STOKEN HERE**; BDCLND=' + randsk
+        'Cookie':'BDUSS=' + BDUSS + ';'
+            +  'STOKEN=' + STOKEN + '; BDCLND=' + randsk
       },
       method:'POST'
       }
@@ -637,7 +641,7 @@ const download = async request => {
   const getRealLink = await fetch(dlink,{
     headers:{
       'user-agent': 'LogStatistic',
-      'Cookie': 'BDUSS==**INPUT YOUR SVIP BDUSS HERE**;'
+      'Cookie': 'BDUSS=' + SVIPBDUSS + ';'
     },
     redirect:"manual"
   })
